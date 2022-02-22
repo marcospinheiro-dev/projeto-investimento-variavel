@@ -10,5 +10,10 @@ public class Main {
         investidor.setCpf("123.456.789-00");
         System.out.println(investidor);
 
+        Ativos atv = new Ativos();
+        atv.setCodigoAcao("BBDC3");
+        atv.setAcao("Banco do Brasil");
+        System.out.println(atv);
+
     }
 }

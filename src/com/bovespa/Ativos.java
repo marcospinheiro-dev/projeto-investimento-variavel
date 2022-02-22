@@ -2,7 +2,7 @@ package com.bovespa;
 
 public class Ativos {
 
-    private int codigoAcao;
+    private String codigoAcao;
     private String acao;
     private String nomeEmpresa;
     private double precoCompra;
@@ -22,11 +22,11 @@ public class Ativos {
         return this.getPrecoVenda()*this.getQtdAcao();
     }
 
-    public int getCodigoAcao() {
+    public String getCodigoAcao() {
         return codigoAcao;
     }
 
-    public void setCodigoAcao(int codigoAcao) {
+    public void setCodigoAcao(String codigoAcao) {
         this.codigoAcao = codigoAcao;
     }
 
