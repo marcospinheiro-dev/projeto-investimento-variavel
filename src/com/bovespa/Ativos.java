@@ -14,7 +14,7 @@ public class Ativos {
     public Ativos() {
     }
 
-    public double comprar() {
+    public double comprar(double precoCompra, double qtdAcao) {
         return this.getPrecoCompra()*this.getQtdAcao();
     }
 
