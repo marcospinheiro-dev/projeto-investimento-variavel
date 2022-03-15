@@ -14,13 +14,6 @@ public class Ativos {
     public Ativos() {
     }
 
-    public double comprar(double precoCompra, double qtdAcao) {
-        return this.getPrecoCompra()*this.getQtdAcao();
-    }
-
-    public double vender() {
-        return this.getPrecoVenda()*this.getQtdAcao();
-    }
 
     public String getCodigoAcao() {
         return codigoAcao;
