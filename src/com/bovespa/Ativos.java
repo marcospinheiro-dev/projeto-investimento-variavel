@@ -6,14 +6,13 @@ public class Ativos {
     private String acao;
     private String nomeEmpresa;
     private double precoCompra;
-    private double precoVenda;
     private double qtdAcao;
-    private double emolumento;
-    private double taxaLiquidacao;
+    private double taxaLiquidacao = 0.00025;
+    private double taxaNegociacao = 0.00005;
+
 
     public Ativos() {
     }
-
 
     public String getCodigoAcao() {
         return codigoAcao;
@@ -47,28 +46,12 @@ public class Ativos {
         this.precoCompra = precoCompra;
     }
 
-    public double getPrecoVenda() {
-        return precoVenda;
-    }
-
-    public void setPrecoVenda(double precoVenda) {
-        this.precoVenda = precoVenda;
-    }
-
     public double getQtdAcao() {
         return qtdAcao;
     }
 
     public void setQtdAcao(double qtdAcao) {
         this.qtdAcao = qtdAcao;
-    }
-
-    public double getEmolumento() {
-        return emolumento;
-    }
-
-    public void setEmolumento(double emolumento) {
-        this.emolumento = emolumento;
     }
 
     public double getTaxaLiquidacao() {
@@ -79,17 +62,24 @@ public class Ativos {
         this.taxaLiquidacao = taxaLiquidacao;
     }
 
+    public double getTaxaNegociacao() {
+        return taxaNegociacao;
+    }
+
+    public void setTaxaNegociacao(double taxaNegociacao) {
+        this.taxaNegociacao = taxaNegociacao;
+    }
+
     @Override
     public String toString() {
         return "Ativos{" +
-                "codigoAcao=" + codigoAcao +
+                "codigoAcao='" + codigoAcao + '\'' +
                 ", acao='" + acao + '\'' +
                 ", nomeEmpresa='" + nomeEmpresa + '\'' +
                 ", precoCompra=" + precoCompra +
-                ", precoVenda=" + precoVenda +
                 ", qtdAcao=" + qtdAcao +
-                ", emolumento=" + emolumento +
-                ", taxaLiquidação=" + taxaLiquidacao +
+                ", taxaLiquidacao=" + taxaLiquidacao +
+                ", taxaNegociacao=" + taxaNegociacao +
                 '}';
     }
 }

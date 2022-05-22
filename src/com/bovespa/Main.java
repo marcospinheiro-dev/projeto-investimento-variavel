@@ -1,51 +1,46 @@
 package com.bovespa;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
+        Scanner scan = new Scanner(System.in);
+
         Investidor investidor = new Investidor();
-        investidor.setCodigo(1);
-        investidor.setNome("Marcos Aurélio");
-        investidor.setCpf("123.456.789-00");
+        System.out.println("Nome do investidor: ");
+        investidor.setNome(scan.nextLine());
+        System.out.println("CPF do investidor: ");
+        investidor.setCpf(scan.nextLine());
+
+        //investidor.setNome("Marcos Aurélio");
+        //investidor.setCpf("123.456.789-00");
+        //System.out.println("I N V E S T I D O R");
+
+        System.out.println("Quantidade de ações compradas: ");
+        double qtd = scan.nextDouble();
+
+        System.out.println("Valor da ação: ");
+        double valor = scan.nextDouble();
+
+        Venda venda = new Venda(qtd, valor);
+
+        System.out.println("Pretenção de lucro em %: ");
+        venda.setLucro(scan.nextDouble());
+
         System.out.println("-------------------------------------");
-        System.out.println("I N V E S T I D O R");
         System.out.println(investidor);
-        Compra compra = new Compra();
-        Venda venda = new Venda();
+        System.out.printf("Valor da compra: %.3f\n", venda.valorCompra());
+        System.out.printf("Valor dos emolumentos da compra é: %.3f\n", venda.valorEmolumentoCompra());
+        System.out.printf("Valor total da compra é: %.3f\n", venda.valorTotalCompra());
+        System.out.printf("Valor unitário do Ponto de Equilíbrio %.3f\n", venda.unitarioPontoEqVenda());
+        System.out.printf("Valor total do Ponto de Equilíbrio %.3f\n", venda.totalPontoEqVenda());
+        System.out.printf("Valor da Unitário da Venda: %.3f\n", venda.valorUnitarioVenda());
+        System.out.printf("Valor Total da Venda: %.3f", venda.valorTotalVenda());
 
-        Ativos atv = new Ativos();
-        atv.setCodigoAcao("BBDC3");
-        atv.setAcao("Banco do Brasil");
-        atv.setNomeEmpresa("Banco do Brasil S/A");
-        compra.setEmolumento(0.4);
-        compra.setTaxaLiquidacao(0.8);
-        compra.setPrecoCompra(2.50);
-        compra.setQtdAcao(200);
-        compra.valorCompra();
-        compra.valorEmolumento();
-        compra.totalOperacaoCompra();
 
-        venda.setEmolumento(0.6);
-        venda.setTaxaLiquidacao(1.4);
-        venda.setPrecoVenda(3.0);
-        venda.setQtdAcao(300);
-        venda.valorVenda();
-        venda.valorEmolumento();
-        venda.totalOperacaoVenda();
-
-        System.out.println("A T I V O");
-        System.out.println(atv);
-        System.out.println("C O M P R A");
-        System.out.printf("Valor da compra: %.2f%n", compra.valorCompra());
-        System.out.printf("Valor dos emolumentos: %.2f%n", compra.valorEmolumento());
-        System.out.println("Total da operacao: " + compra.totalOperacaoCompra());
-
-        System.out.println("V E N D A");
-        System.out.printf("Valor da venda: %.2f%n", venda.valorVenda());
-        System.out.printf("Valor dos emolumentos: %.2f%n", venda.valorEmolumento());
-        System.out.println("Total da operacao: " + venda.totalOperacaoVenda());
-
+        scan.close();
 
     }
 }

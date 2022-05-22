@@ -1,17 +1,19 @@
 package com.bovespa;
 
-public class Compra extends Ativos {
+public class Compra extends Ativos{
+
 
     public double valorCompra() {
-        return getPrecoCompra()*getQtdAcao();
+        return this.getPrecoCompra() * this.getQtdAcao();
     }
 
-    public double valorEmolumento () {
-        return (valorCompra() * (getEmolumento() + getTaxaLiquidacao()))/100d;
+    public double valorEmolumentoCompra () {
+        return this.valorCompra() * (this.getTaxaNegociacao() + this.getTaxaLiquidacao());
     }
 
-    public double totalOperacaoCompra () {
-        return valorCompra() + valorEmolumento();
+    public double valorTotalCompra() {
+
+        return valorCompra() + valorEmolumentoCompra();
     }
 
 }

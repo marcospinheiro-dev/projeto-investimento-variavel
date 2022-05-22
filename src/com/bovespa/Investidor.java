@@ -42,10 +42,8 @@ public class Investidor {
 
     @Override
     public String toString() {
-        return "Investidor{" +
-                "codigo=" + codigo +
-                ", nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                '}';
+        return "Investidor: \n" +
+                "Nome = " + nome +"\n"+
+                "CPF = " + cpf ;
     }
 }
